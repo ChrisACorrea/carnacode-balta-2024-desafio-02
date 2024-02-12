@@ -1,0 +1,26 @@
+﻿<div class="history__card">
+	<div class="history__card-aside">
+		<div class="history__aside-block">
+		</div>
+	</div>
+	<div class="history__description">
+		<div class="history__card-header">
+			<span class="history__card-title">@Title</span>
+			<span class="history__card-creation-date">@GetDate()</span>
+		</div>
+		<div class="history__card-body">
+			@Body
+		</div>
+	</div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment Title { get; set; } = null!;
+    [Parameter]
+    public RenderFragment Body { get; set; } = null!;
+    [Parameter]
+    public DateTime CreationDate { get; set; }
+
+    string GetDate() => CreationDate.ToString("dd/MM/yyyy");
+}

@@ -1,7 +1,31 @@
 ﻿@page "/history"
+<link rel="stylesheet" href="css/input.css" />
 
-<h3>History Page works</h3>
+<div class="history">
+	<div class="history__logo-container">
+		<CarnaLogo />
+	</div>
+	<div class="history__title">
+		<h1>Histórico</h1>
+	</div>
+	<div class="history__search-container">
+		<InputText type="search" placeholder="Pesquisar..." @bind-Value="SearchValue" class="input" />
+	</div>
+	<div class="history-card-list">
+		@if (!HistoryItems.Any())
+		{
+			<p>Não há nada aqui.</p>
+		}
+
+		@foreach (var item in HistoryItems)
+		{
+			<CarnaHistoryCard></CarnaHistoryCard>
+		}
+	</div>
+</div>
+
 
 @code {
-
+	public string SearchValue { get; set; } = string.Empty;
+	public List<object> HistoryItems { get; set; } = new();
 }

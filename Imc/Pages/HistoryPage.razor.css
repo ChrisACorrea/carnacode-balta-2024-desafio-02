@@ -1,0 +1,33 @@
+﻿.history {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+}
+
+.history__logo-container,
+.history__title {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px;
+}
+
+.history__search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: 0 0 20px;
+}
+
+.history__card-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 20px;
+}
+
+p {
+    text-align: center;
+}

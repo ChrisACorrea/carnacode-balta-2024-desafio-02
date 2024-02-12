@@ -12,5 +12,6 @@
 .container__content {
     display: flex;
     margin: 30px 15px;
+    flex: 1;
     flex-direction: column;
 }
