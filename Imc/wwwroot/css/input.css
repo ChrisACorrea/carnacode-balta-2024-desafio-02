@@ -1,0 +1,77 @@
+﻿/*
+    Usar a linha abaixo no componente em que usar os inputs
+    <link rel="stylesheet" href="css/input.css" />
+*/
+
+.input {
+    background-color: var(--input-fill-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    padding: 15px;
+}
+
+    .input:focus {
+        outline: none;
+        border-color: var(--grey01);
+    }
+
+.input::placeholder {
+        color: var(--placeholder-color);
+    }
+
+.input[type="search"] {
+    border-radius: 50px;
+}
+
+.input__option {
+    background-color: var(--input-fill-color);
+    color: var(--text-color);
+    padding: 5px;
+    border: none;
+}
+
+    .input__option:hover {
+        background-color: var(--grey03);
+    }
+
+.checkbox__container {
+    display: flex;
+    position: relative;
+}
+
+.checkbox {
+    display: none;
+}
+
+    .checkbox + label {
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        display: inline-block;
+        color: var(--subtitle-text-color);
+        font-size: 0.9rem;
+    }
+
+        .checkbox + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid var(--input-border-color);
+            border-radius: 4px;
+            background-color: var(--input-fill-color);
+        }
+
+    .checkbox:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        width: 11px;
+        height: 11px;
+        border-radius: 3px;
+        background-color: #666;
+    }
