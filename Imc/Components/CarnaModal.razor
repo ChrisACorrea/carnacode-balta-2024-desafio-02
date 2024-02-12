@@ -1,0 +1,31 @@
+﻿<div class="modal__backdrop">
+	<div class="modal">
+		<div class="modal__logo-container">
+			<CarnaLogo />
+		</div>
+
+		<div class="modal__header">
+			<h1 class="modal__title">@Title</h1>
+
+			@if(!string.IsNullOrWhiteSpace(Subtitle))
+			{
+				<p class="modal__subtitle">@Subtitle</p>
+			}
+		</div>
+
+		<div class="modal__content">
+			@ChildContent
+		</div>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public RenderFragment ChildContent { get; set; } = null!;
+
+	[Parameter]
+	public string Title { get; set; } = null!;
+
+	[Parameter]
+	public string? Subtitle { get; set; }
+}

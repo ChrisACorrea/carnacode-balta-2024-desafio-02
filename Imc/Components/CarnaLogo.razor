@@ -1,0 +1,10 @@
+﻿<div class="logo" 
+	style="height: @(Size)px; width: @(Size)px; border-radius: @(Size/4)px; border-"
+>
+	<img class="logo__img" src="img/icon-no-bg.png" alt="app-icon" />
+</div>
+
+@code {
+	[Parameter]
+	public int Size { get; set; } = 95;
+}

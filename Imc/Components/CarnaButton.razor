@@ -1,0 +1,23 @@
+﻿<button @onclick="OnClick" type="button"
+        class="btn @GetButtonVariant() @Class">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    [Parameter]
+    public ButtonVariant Variant { get; set; } = ButtonVariant.Primary;
+
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+
+    string GetButtonVariant() =>
+       Variant == ButtonVariant.Primary ?
+       "btn--primary" :
+       "btn--secondary";
+}
