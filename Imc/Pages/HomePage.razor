@@ -1,10 +1,42 @@
 ﻿@page "/"
+@using Imc.Models
+@using Imc.ViewModels
 <link rel="stylesheet" href="css/input.css" />
 
 <PageTitle>Início</PageTitle>
 
-<h1> Home Works!</h1>
+<div class="home">
+	<div class="home__title">
+		<h1>Cálculo de IMC</h1>
+	</div>
+	<div class="home__content">
+		<EditForm Model="Model">
+			<DataAnnotationsValidator />
+			<div class="input__container">
+				<InputNumber TValue="double?" placeholder="Altura (em m²)" class="input" @bind-Value="@Model.Height"></InputNumber>
+			</div>
+			<div class="input__container">
+				<InputNumber TValue="double?" placeholder="Peso (em kg)" class="input" @bind-Value="@Model.Weight"></InputNumber>
+			</div>
+			<div class="input__container">
+				<InputSelect TValue="ESex?" placeholder="Sexo" class="input" @bind-Value="@Model.Sex">
+					<option value="" selected class="input__option"></option>
+					<option value="@ESex.Masculino" class="input__option">@Enum.GetName(typeof(ESex), ESex.Masculino)</option>
+					<option value="@ESex.Feminino" class="input__option">@Enum.GetName(typeof(ESex), ESex.Feminino)</option>
+				</InputSelect>
+			</div>
+			<div class="checkbox__container">
+				<InputCheckbox typeof="checkbox" id="check-sex" class="checkbox" @bind-Value="@Model.IsElderly"></InputCheckbox>
+				<label for="check-sex">Eu tenho 60 anos ou mais</label>
+			</div>
+			<CarnaButtonGroup>
+				<CarnaButton Variant="ButtonVariant.Primary">Calcular meu IMC</CarnaButton>
+				<CarnaButton Variant="ButtonVariant.Secondary">Entenda o cálculo</CarnaButton>
+			</CarnaButtonGroup>
+		</EditForm>
+	</div>
+</div>
 
 @code {
-
+	public ImcViewModel Model { get; set; } = new();
 }

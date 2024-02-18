@@ -1,0 +1,7 @@
+﻿.btn-group{
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    align-items: stretch;
+    margin: 15px 0;
+}

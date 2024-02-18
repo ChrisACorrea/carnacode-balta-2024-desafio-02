@@ -19,6 +19,9 @@ html {
 
 body, #app {
     position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center; 
     height: 100%;
     width: 100%;
 }
